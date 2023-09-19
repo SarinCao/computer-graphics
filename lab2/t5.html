@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>实验二</title>
+    <script id="vertex-shader" type="x-shader/x-vertex">
+	attribute vec4 vPosition;
+	uniform mat4 sb;
+	void main(){
+		gl_Position = sb * vPosition;
+	}
+	</script>
+
+    <script id="fragment-shader" type="x-shader/x-fragment">
+	precision mediump float;
+	void main(){
+		gl_FragColor = vec4(1.0,0.0,0.0,1.0);
+	}
+	</script>
+    <script type="text/javascript" src="./j1.js"></script>
+    <script type="text/javascript" src="./j2.js"></script>
+    <script type="text/javascript" src="./j3.js"></script>
+    <script type="text/javascript" src="./j7.js"></script>
+</head>
+
+<body onload="initTriangles()">
+    <div align="center" style="margin-top: 120px">
+        <canvas id="gl-canvas" width="512" height="512">你的浏览器不支持HTML5 canvas元素</canvas><br><br>
+        <table align="center">
+            <tr>
+                <td>
+                    请输入0~7的数字
+                </td>
+                <td>
+                    <input type="text" id="weihe" value="4"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    请输入旋转角度
+                </td>
+                <td>
+                    <input type="text" id="xz" value="60"/>
+                </td>
+            </tr>
+        </table>
+
+
+        <input type="button" onclick="draw()" value="绘制"/>
+    </div>
+</body>
+
+</html>
